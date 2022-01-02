@@ -1,5 +1,7 @@
 public $classname($classname other) {
+#if($superClassHasCopyConstructor)
 super(other);
+#end
 #foreach($field in $fields)
     this.$field.name = other.$field.accessor;
 #end

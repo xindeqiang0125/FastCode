@@ -7,6 +7,7 @@ import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiField;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiMethod;
+import org.apache.velocity.VelocityContext;
 
 public class CopyConstructorAction extends TemplateCodeAction {
 
@@ -17,6 +18,12 @@ public class CopyConstructorAction extends TemplateCodeAction {
         PsiField[] fields = clazz.getFields();
         if (fields.length == 0) return false;
         return super.isVisible(editor, project, psiFile);
+    }
+
+    @Override
+    protected void customVelocityContext(VelocityContext context, PsiClass clazz, Editor editor, Project project, PsiFile psiFile) {
+        super.customVelocityContext(context, clazz, editor, project, psiFile);
+        context.put("superClassHasCopyConstructor", PsiUtils.hasCopyConstructor(clazz.getSuperClass()));
     }
 
     @Override

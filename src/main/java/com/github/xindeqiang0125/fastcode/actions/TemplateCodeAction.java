@@ -48,7 +48,7 @@ public abstract class TemplateCodeAction extends EditorAction {
             }
         });
         VelocityContext context = getVelocityContext(project, clazz, selectedMembers);
-        customVelocityContext(context);
+        customVelocityContext(context, clazz, editor, project, psiFile);
         StringWriter sw = new StringWriter();
         engine.evaluate(context, sw, "Generate Code", templateText);
         doExecute(clazz, sw.toString(), editor, project, psiFile);
@@ -56,7 +56,7 @@ public abstract class TemplateCodeAction extends EditorAction {
 
     protected abstract void doExecute(PsiClass clazz, String code, Editor editor, Project project, PsiFile psiFile);
 
-    protected void customVelocityContext(VelocityContext context) {
+    protected void customVelocityContext(VelocityContext context, PsiClass clazz, Editor editor, Project project, PsiFile psiFile) {
 
     }
 
