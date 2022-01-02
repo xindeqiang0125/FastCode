@@ -35,11 +35,6 @@
                 text="CopyConstructor" description="CopyConstructor">
             <add-to-group group-id="FastCodeGenerateGroup" anchor="first"/>
         </action>
-        <action id="com.github.xindeqiang0125.fastcode.actions.TestAction"
-                class="com.github.xindeqiang0125.fastcode.actions.TestAction"
-                text="TestAction" description="TestAction">
-            <add-to-group group-id="FastCodeGenerateGroup" anchor="first"/>
-        </action>
 
     </actions>
 </idea-plugin>
