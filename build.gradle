@@ -4,7 +4,7 @@ plugins {
 }
 
 group 'com.github.xindeqiang0125'
-version '1.0-SNAPSHOT'
+version '1.0.0'
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
@@ -35,7 +35,10 @@ intellij {
 }
 patchPluginXml {
     changeNotes = """
-      Add change notes here.<br>
+      <p1>1.0.0</p1>
+      <ul>
+      <li>CopyConstructor</li>
+      </ul>
       <em>most HTML tags may be used</em>"""
     sinceBuild = 201
     untilBuild = 221
