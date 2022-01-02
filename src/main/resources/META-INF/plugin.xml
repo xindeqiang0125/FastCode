@@ -1,0 +1,45 @@
+<idea-plugin>
+    <id>com.github.xindeqiang0125.fastcode</id>
+    <name>FastCode</name>
+    <vendor email="xdqnd2012@163.com" url="https://github.com/xindeqiang0125">xindeqiang0125</vendor>
+
+    <description><![CDATA[
+    提供一系列代码生成工具，简化程序员的开发。从繁琐的模板化代码中抽身。投入到复杂的设计之中。
+    ]]></description>
+
+    <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.lang</depends>
+    <depends>com.intellij.modules.java</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+
+        <!-- Add your actions here -->
+        <action id="FastCodeGenerateAction"
+                class="com.github.xindeqiang0125.fastcode.actions.FastCodeGenerateAction"
+                text="FastCodeGenerate" description="FastCodeGenerate">
+            <add-to-group group-id="CodeMenu" relative-to-action="Generate" anchor="after"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="alt PAGE_UP"/>
+        </action>
+
+
+        <group id="FastCodeGenerateGroup">
+        </group>
+        <action id="FastCodeCopyConstructorAction"
+                class="com.github.xindeqiang0125.fastcode.actions.CopyConstructorAction"
+                text="CopyConstructor" description="CopyConstructor">
+            <add-to-group group-id="FastCodeGenerateGroup" anchor="first"/>
+        </action>
+        <action id="com.github.xindeqiang0125.fastcode.actions.TestAction"
+                class="com.github.xindeqiang0125.fastcode.actions.TestAction"
+                text="TestAction" description="TestAction">
+            <add-to-group group-id="FastCodeGenerateGroup" anchor="first"/>
+        </action>
+
+    </actions>
+</idea-plugin>

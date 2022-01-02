@@ -1,0 +1,6 @@
+public $classname($classname other) {
+super(other);
+#foreach($field in $fields)
+    this.$field.name = other.$field.accessor;
+#end
+}

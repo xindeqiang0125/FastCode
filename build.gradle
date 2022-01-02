@@ -1,0 +1,44 @@
+plugins {
+    id 'java'
+    id 'org.jetbrains.intellij' version '0.7.2'
+}
+
+group 'com.github.xindeqiang0125'
+version '1.0-SNAPSHOT'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    maven {
+        url 'https://maven.aliyun.com/nexus/content/groups/public/'
+    }
+    maven {
+        url 'https://maven.aliyun.com/nexus/content/repositories/jcenter'
+    }
+    maven {
+        url 'https://oss.sonatype.org/content/repositories/snapshots/'
+    }
+    gradlePluginPortal()
+    mavenCentral()
+
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+}
+
+// See https://github.com/JetBrains/gradle-intellij-plugin/
+intellij {
+    version '2020.1.1'
+    plugins = ['java']
+}
+patchPluginXml {
+    changeNotes = """
+      Add change notes here.<br>
+      <em>most HTML tags may be used</em>"""
+    sinceBuild = 201
+}
+test {
+    useJUnitPlatform()
+}
