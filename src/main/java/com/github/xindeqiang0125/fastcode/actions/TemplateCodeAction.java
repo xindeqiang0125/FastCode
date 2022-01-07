@@ -30,7 +30,6 @@ import java.util.List;
 
 public abstract class TemplateCodeAction extends EditorAction {
 
-    // TODO: 2022/1/1 改名fastcoder
     @Override
     protected void execute(Editor editor, Project project, PsiFile psiFile) {
         PsiClass clazz = PsiUtils.findCaretClass(editor, psiFile);
